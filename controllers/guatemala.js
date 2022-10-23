@@ -45,7 +45,7 @@ const GuatemalaPut = async(req, res = response) => {
     const { _id, codigo, ...resto } = req.body;
     const guatemala = await Guatemala.findByIdAndUpdate( id, resto );
 
-    res.json(guatemala);
+    res.json({guatemala, Dev});
 }
 
 
@@ -53,7 +53,7 @@ const GuatemalaPut = async(req, res = response) => {
 const GuatemalaDelete = async(req, res = response) => {
     const { id } = req.params;
     const guatemala = await Guatemala.findByIdAndUpdate( id, {});
-    res.json(guatemala, Dev);
+    res.json({guatemala, Dev});
 }
 
 module.exports = {
