@@ -42,9 +42,10 @@ const GuatemalaPost = async(req, res = response) => {
 
 const GuatemalaPut = async(req, res = response) => {
     const { id } = req.params;
-    const { _id,...resto } = req.body;
+    const { _id, codigo, ...resto } = req.body;
     const guatemala = await Guatemala.findByIdAndUpdate( id, resto );
-    res.json(guatemala,Dev);
+
+    res.json(guatemala);
 }
 
 

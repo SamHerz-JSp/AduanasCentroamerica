@@ -1,7 +1,7 @@
 
 const { Schema, model } = require('mongoose');
 
-const GuatemalaSchema = Schema({
+const Costarica = Schema({
     codigo: {
         type: String,
         required: [true, 'El codigo es obligatorio']
@@ -12,22 +12,21 @@ const GuatemalaSchema = Schema({
         required: [true, 'El Nombre del Proyecto es obligatorio']
       
     },
-    monto: {
+    paisqueejecuta: {
         type: String,
-        required: [true, 'El Monto es obligatorio'],
+        required: [true, 'El Pais que ejecuta es obligatorio'],
     },
-    fecha_servidor: {
+    fechacierre: {
         type: String,
         required: [true, 'El fecha es obligatorio'],
     }
-
 });
 
 
 
-GuatemalaSchema.methods.toJSON = function() {
+Costarica.methods.toJSON = function() {
     const { __v, ...Aduana  } = this.toObject();
     return Aduana;
 }
 
-module.exports = model( 'Guatemala', GuatemalaSchema);
+module.exports = model( 'CostaRica', Costarica);
