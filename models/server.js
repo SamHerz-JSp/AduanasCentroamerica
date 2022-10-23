@@ -23,8 +23,6 @@ class Server {
     async conectarDB() {
         await dbConnection();
     }
-
-
     middlewares() {
 
         // CORS
